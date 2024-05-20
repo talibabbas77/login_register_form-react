@@ -1,0 +1,205 @@
+.wrapper {
+  position: relative;
+  width: 420px;
+  height: 500px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.wrapper.active {
+  height: 580px;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper.active .form-box.login {
+  transition: none;
+  translate: -400px;
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  translate: 400px;
+}
+
+.wrapper.active .form-box.register {
+  transition: translate 0.18s ease;
+  translate: 0;
+}
+
+form h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+form .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 16px;
+}
+
+form .remember-forget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forget label input {
+  accent-color: #fff;
+  margin-right: 4px;
+}
+
+.remember-forget a {
+  color: #fff;
+  text-decoration: none;
+}
+.remember-forget a:hover {
+  text-decoration: underline;
+}
+
+form button {
+  margin: 5px;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+  transition: all 0.25s ease-in-out;
+}
+
+.register .btn,
+.login .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register .btn .google-icon,
+.login .btn .google-icon {
+  margin: 5px;
+  font-size: 20px;
+}
+
+button:hover {
+  color: #fff;
+  background: #674a27;
+}
+
+form .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100vw;
+    height: 100%;
+  }
+
+  .wrapper.active {
+    max-height: 80vh;
+  }
+
+  .wrapper .form-box {
+    padding: 20px;
+  }
+
+  .input-box {
+    margin: 20px 0;
+  }
+
+  form h1 {
+    font-size: 28px;
+  }
+
+  .input-box input {
+    font-size: 14px;
+    padding: 15px 35px 15px 15px;
+  }
+
+  form .remember-forget {
+    font-size: 13px;
+    margin: -10px 0 10px;
+  }
+
+  form button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .register .btn,
+  .login .btn {
+    font-size: 12px;
+  }
+
+  .register .btn .google-icon,
+  .login .btn .google-icon {
+    margin: 3px;
+    font-size: 18px;
+  }
+
+  .form-box.register,
+  .form-box.login {
+    width: 100%;
+    transition: translate 0.15s ease;
+    translate: 0;
+  }
+}
